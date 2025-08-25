@@ -157,7 +157,8 @@ void CGameClient::OnConsoleInit()
 					      &m_Tooltips,
 					      &m_Menus.m_Binder,
 					      &m_GameConsole,
-					      &m_MenuBackground});
+					      &m_MenuBackground,
+						  &m_ModRuntime});
 
 	// build the input stack
 	m_vpInput.insert(m_vpInput.end(), {&m_Menus.m_Binder, // this will take over all input when we want to bind a key

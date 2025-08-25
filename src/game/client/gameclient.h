@@ -49,6 +49,7 @@
 #include "components/mapsounds.h"
 #include "components/menu_background.h"
 #include "components/menus.h"
+#include "components/mod_runtime.h"
 #include "components/motd.h"
 #include "components/nameplates.h"
 #include "components/particles.h"
@@ -168,6 +169,7 @@ public:
 	CMapLayers m_MapLayersForeground = CMapLayers{ERenderType::RENDERTYPE_FOREGROUND};
 	CBackground m_Background;
 	CMenuBackground m_MenuBackground;
+	CModRuntime m_ModRuntime;
 
 	CMapSounds m_MapSounds;
 

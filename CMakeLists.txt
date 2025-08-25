@@ -2386,6 +2386,8 @@ if(CLIENT)
     components/menus_settings_assets.cpp
     components/menus_start.cpp
     components/menus_start.h
+    components/mod_runtime.cpp
+    components/mod_runtime.h
     components/motd.cpp
     components/motd.h
     components/nameplates.cpp
