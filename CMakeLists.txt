@@ -503,6 +503,8 @@ find_package(Curl)
 if(CLIENT AND VIDEORECORDER)
   find_package(FFMPEG)
 endif()
+find_package(Lua)
+find_package(Sol2)
 find_package(Freetype)
 if(DOWNLOAD_GTEST)
   find_package(Git)
@@ -621,6 +623,8 @@ show_dependency_status("SDL2" SDL2)
 show_dependency_status("SQLite3" SQLite3)
 show_dependency_status("Wavpack" WAVPACK)
 show_dependency_status("Zlib" ZLIB)
+show_dependency_status("Lua" Lua)
+show_dependency_status("Sol2" Sol2)
 if(DISCORD)
   show_dependency_status("DiscordSdk" DiscordSdk)
 endif()
@@ -643,6 +647,13 @@ if(NOT(RUST_FOUND))
 endif()
 if(NOT(SQLite3_FOUND))
   message(SEND_ERROR "You must install SQLite3 to compile ${CMAKE_PROJECT_NAME}")
+endif()
+
+if(NOT(Lua_FOUND))
+  message(SEND_ERROR "You must install Lua to compile ${CMAKE_PROJECT_NAME}")
+endif()
+if(NOT(Sol2_FOUND))
+  message(SEND_ERROR "You must install Sol2 to compile ${CMAKE_PROJECT_NAME}")
 endif()
 
 if(MYSQL AND NOT(MYSQL_FOUND))
@@ -2572,6 +2583,7 @@ if(CLIENT)
     ${SDL2_LIBRARIES}
     ${WAVPACK_LIBRARIES}
     ${FFMPEG_LIBRARIES}
+    ${LUA_LIBRARIES}
 
     # Order of these three is important.
     ${OPUSFILE_LIBRARIES}
